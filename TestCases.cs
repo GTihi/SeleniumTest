@@ -56,7 +56,7 @@ public class SeleniumTest : IDisposable
         IWebElement nextPostLink = wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(".nav-next a")));
         ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", nextPostLink);
         Thread.Sleep(2000);
-        nextPostLink.Click();//comment
+        nextPostLink.Click();
         driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         Assert.NotEqual("Interacțiunea cu elementele web în Selenium WebDriver – Selenium Webdriver Tests", driver.Title);
 
