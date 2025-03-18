@@ -1,11 +1,8 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
-using System;
-using System.Threading;
-using Xunit;
+
 
 public class SeleniumTest : IDisposable
 {
@@ -18,12 +15,16 @@ public class SeleniumTest : IDisposable
         Thread.Sleep(2000);
     }
 
+    //Testarea titlului paginii
+
     [Fact]
     public void TestPageTitle()
     {
         string expectedTitle = "Selenium Webdriver Tests";
         Assert.Contains(expectedTitle, driver.Title);
     }
+
+    //Test pentru butonul Textbox 
 
     [Fact]
     public void TestButtonClick()
@@ -33,8 +34,9 @@ public class SeleniumTest : IDisposable
         articleLink.Click();
         Thread.Sleep(2000);
         Assert.Equal("Sincronizare în Selenium – gestionarea Wait-urilor – Selenium Webdriver Tests", driver.Title);
-
     }
+
+    //Test pentru butonul Textbox 
 
     [Fact]
     public void TestButtonClickFail()
@@ -46,6 +48,8 @@ public class SeleniumTest : IDisposable
         Assert.NotEqual("Sincronizare în Selenium – gestionarea Wait-urilor – Selenium Webdriver Tests", driver.Title);
 
     }
+
+    //Testarea butonului "Next Post"
 
     [Fact]
     public void TestNextPostButtonClick()
@@ -61,8 +65,6 @@ public class SeleniumTest : IDisposable
         Assert.NotEqual("Interacțiunea cu elementele web în Selenium WebDriver – Selenium Webdriver Tests", driver.Title);
 
     }
-
-
 
 
     public void Dispose()
